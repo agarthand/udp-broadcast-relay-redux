@@ -1,3 +1,10 @@
+ARCHIVED
+===
+
+This package still works perfectly fine to the best of my knowledge as of 2024, however I do not use it anymore personally and
+do not have time to follow issues / accept PRs. Feel free to fork as you see fit, following the license restrictions
+provided by this repo and the upstream.
+
 UDP Broadcast Relay for Linux / FreeBSD / pfSense
 ==========================
 
