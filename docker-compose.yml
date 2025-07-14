@@ -1,10 +1,23 @@
 version: "3.8"
 
 services:
-  udp-broadcast-relay:
+  udp-relay-4001:
     build: .
-    image: udp-broadcast-relay-redux:latest
+    container_name: udp-relay-4001
+    restart: unless-stopped
     network_mode: host
-    volumes:
-      - ./config.json:/config.json:ro
-    command: ["--config", "/config.json"]
+    command: ["-f", "0.0.0.0", "-t", "239.255.255.250", "-p", "4001", "-P", "4001"]
+
+  udp-relay-1900:
+    build: .
+    container_name: udp-relay-1900
+    restart: unless-stopped
+    network_mode: host
+    command: ["-f", "0.0.0.0", "-t", "239.255.255.250", "-p", "1900", "-P", "1900"]
+
+  udp-relay-5353:
+    build: .
+    container_name: udp-relay-5353
+    restart: unless-stopped
+    network_mode: host
+    command: ["-f", "0.0.0.0", "-t", "239.255.255.250", "-p", "5353", "-P", "5353"]
