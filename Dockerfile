@@ -10,4 +10,3 @@ FROM $ALPINE
 WORKDIR /runtime
 COPY --from=builder /build/udp-broadcast-relay-redux .
 ENTRYPOINT ["./udp-broadcast-relay-redux"]
-CMD ["--config", "/config/config.json"]
